@@ -259,15 +259,22 @@ Rules:
 - choice → return just the selected option text
 - signature → return "To be signed physically"
 
-Return ONLY the normalized answer, no explanation.`;
+Return ONLY a valid JSON object with a single key "answer". Do not include ANY reasoning or markdown.
+Example: {"answer": "Seva"}`;
 
   try {
-    const normalized = await groqChat({
+    const content = await groqChat({
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.0,
-      max_tokens: 100
+      max_tokens: 150
     });
-    return normalized.trim();
+    
+    const jsonMatch = content.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return parsed.answer || rawTranscript;
+    }
+    return content.trim(); // Fallback if it didn't return JSON
   } catch (err) {
     console.warn('Answer normalization failed, using raw transcript:', err.message);
     return rawTranscript;
