@@ -44,8 +44,17 @@ export async function speechToText(audioPath, language = 'english') {
         }
       );
 
-      const transcript = response.data.transcript || response.data.text;
+      let transcript = response.data.transcript || response.data.text;
+      
+      // Filter out common STT hallucinations for silence/clipped audio
       if (transcript) {
+        const lowerTrans = transcript.toLowerCase().replace(/[^a-z\s]/g, '').trim();
+        const hallucinations = ['thank you', 'thank you very much', 'thanks', 'ammen', 'subscribe'];
+        
+        if (hallucinations.includes(lowerTrans)) {
+          throw new Error('Audio was too short or silent (STT Hallucination). Please speak clearly.');
+        }
+
         return {
           transcription: transcript,
           confidence: 1.0,
@@ -54,7 +63,7 @@ export async function speechToText(audioPath, language = 'english') {
         };
       }
     } catch (sarvamError) {
-      console.warn('Sarvam STT fallback due to error:', sarvamError.response?.data || sarvamError.message);
+      console.warn('Sarvam STT failed/hallucinated:', sarvamError.message || sarvamError.response?.data);
     }
   }
 

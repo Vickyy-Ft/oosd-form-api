@@ -8,14 +8,8 @@ export const useAudioRecorder = () => {
 
   const startRecording = useCallback(async () => {
     try {
-      // Apply advanced constraints to enhance soft voices (saying lightly)
-      const stream = await navigator.mediaDevices.getUserMedia({ 
-        audio: {
-          autoGainControl: true,
-          noiseSuppression: true,
-          echoCancellation: true
-        } 
-      });
+      // Using default audio constraints to avoid aggressive noise suppression clipping short words
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       
       // Determine the best supported mime type (fixes iOS Safari issues)
       const mimeType = window.MediaRecorder.isTypeSupported('audio/webm') 
