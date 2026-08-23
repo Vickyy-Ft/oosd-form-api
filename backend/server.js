@@ -26,7 +26,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(helmet());
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL, 
@@ -78,8 +80,12 @@ app.use('/api/stt', sttRouter);
 app.use('/api/generate-output', outputRouter);
 app.use('/api/session', sessionRouter);
 
-// Serve static files for downloads
-app.use('/api/downloads', express.static(path.join(__dirname, 'outputs')));
+// Serve static files for downloads (force download instead of inline view)
+app.use('/api/downloads', express.static(path.join(__dirname, 'outputs'), {
+  setHeaders: (res, path) => {
+    res.setHeader('Content-Disposition', 'attachment');
+  }
+}));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
