@@ -80,23 +80,6 @@ const OutputStage = () => {
     });
   }
 
-  const handleDownload = () => {
-    if (downloadUrl) {
-      const fullUrl = downloadUrl.startsWith('/api') 
-        ? downloadUrl.replace('/api', API_BASE_URL) 
-        : downloadUrl;
-        
-      // Create a hidden anchor tag to force download robustly
-      const link = document.createElement('a');
-      link.href = fullUrl;
-      link.target = '_blank'; // Open in new tab as fallback
-      link.download = 'filled_form.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
-
   const handlePrint = () => {
     window.print();
   };
@@ -130,13 +113,19 @@ const OutputStage = () => {
           <>
             {/* Download Action Row */}
             <div className="download-actions">
-              <button
-                className="btn-download-pdf"
-                onClick={handleDownload}
-              >
-                <span className="icon">⬇️</span>
-                <span>{content.download}</span>
-              </button>
+              {downloadUrl && (
+                <a
+                  className="btn-download-pdf"
+                  href={fullDownloadUrl}
+                  download="filled_form.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <span className="icon">⬇️</span>
+                  <span>{content.download}</span>
+                </a>
+              )}
 
               <button
                 className="btn-print"
