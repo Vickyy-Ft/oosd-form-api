@@ -82,9 +82,18 @@ const OutputStage = () => {
 
   const handleDownload = () => {
     if (downloadUrl) {
-      window.location.href = downloadUrl.startsWith('/api') 
+      const fullUrl = downloadUrl.startsWith('/api') 
         ? downloadUrl.replace('/api', API_BASE_URL) 
         : downloadUrl;
+        
+      // Create a hidden anchor tag to force download robustly
+      const link = document.createElement('a');
+      link.href = fullUrl;
+      link.target = '_blank'; // Open in new tab as fallback
+      link.download = 'filled_form.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   };
 
