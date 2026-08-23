@@ -1,0 +1,27 @@
+{
+  "name": "accessible-form-assistant",
+  "version": "1.0.0",
+  "description": "Voice-first accessible form completion assistant",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "test": "echo \"Run tests in backend and frontend directories separately\""
+  },
+  "keywords": [
+    "accessibility",
+    "government-forms",
+    "voice-interface",
+    "assistive-technology",
+    "screen-reader",
+    "multilingual"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

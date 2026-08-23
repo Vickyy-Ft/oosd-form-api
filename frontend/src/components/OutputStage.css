@@ -1,0 +1,197 @@
+.output-stage {
+  width: 100%;
+}
+
+.success-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--success);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+  margin-bottom: 0.5rem;
+  animation: fadeUp 0.5s ease-out;
+}
+
+/* Download Actions Row */
+.download-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.btn-download-pdf {
+  flex: 2;
+  min-width: 180px;
+  background: var(--success);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-download-pdf:hover {
+  background: #059669;
+}
+
+.btn-print {
+  flex: 1;
+  min-width: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-print:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* QR Code Section */
+.qr-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.qr-label {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.qr-box {
+  background: #fff;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Title */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: left;
+  width: 100%;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Summary Grid */
+.summary-section {
+  width: 100%;
+}
+
+.summary-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.summary-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+}
+
+.summary-key {
+  color: var(--text-sub);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.summary-val {
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+  text-align: right;
+}
+
+/* Docs Section */
+.docs-section {
+  width: 100%;
+}
+
+.docs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.doc-item {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.doc-check {
+  color: var(--warning);
+  font-weight: 800;
+}
+
+.btn-start-over {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  width: 100%;
+  margin-top: 1rem;
+  min-height: 48px;
+}
+
+.btn-start-over:hover {
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .btn-download-pdf, .btn-print, .btn-start-over, .qr-container {
+    display: none !important;
+  }
+  .glass-panel {
+    border: none !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    backdrop-filter: none !important;
+  }
+  .summary-item {
+    background: #fff !important;
+    border-color: #eee !important;
+  }
+  .summary-key, .summary-val {
+    color: #000 !important;
+  }
+}

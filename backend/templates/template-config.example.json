@@ -1,0 +1,80 @@
+{
+  "templates": [
+    {
+      "template_id": "disability_certificate",
+      "form_name": "Disability Certificate Application",
+      "description": "Application form for disability certificate",
+      "pdf_path": "./templates/disability_certificate.pdf",
+      "field_mappings": [
+        {
+          "field_id": "applicant_name",
+          "pdf_field_name": "Name",
+          "page_number": 1
+        },
+        {
+          "field_id": "father_name",
+          "pdf_field_name": "FatherName",
+          "page_number": 1
+        },
+        {
+          "field_id": "date_of_birth",
+          "pdf_field_name": "DOB",
+          "page_number": 1
+        },
+        {
+          "field_id": "address",
+          "pdf_field_name": "Address",
+          "page_number": 1
+        },
+        {
+          "field_id": "aadhaar_number",
+          "pdf_field_name": "AadhaarNumber",
+          "page_number": 1
+        },
+        {
+          "field_id": "disability_type",
+          "pdf_field_name": "DisabilityType",
+          "page_number": 1
+        },
+        {
+          "field_id": "disability_percentage",
+          "pdf_field_name": "DisabilityPercentage",
+          "page_number": 1
+        }
+      ]
+    },
+    {
+      "template_id": "ration_card",
+      "form_name": "Ration Card Update Form",
+      "description": "Form for updating ration card details",
+      "pdf_path": "./templates/ration_card.pdf",
+      "field_mappings": [
+        {
+          "field_id": "card_number",
+          "pdf_field_name": "RationCardNumber",
+          "page_number": 1
+        },
+        {
+          "field_id": "head_of_family",
+          "pdf_field_name": "HeadOfFamily",
+          "page_number": 1
+        },
+        {
+          "field_id": "address",
+          "pdf_field_name": "Address",
+          "page_number": 1
+        },
+        {
+          "field_id": "mobile_number",
+          "pdf_field_name": "MobileNumber",
+          "page_number": 1
+        },
+        {
+          "field_id": "number_of_members",
+          "pdf_field_name": "FamilyMembers",
+          "page_number": 1
+        }
+      ]
+    }
+  ]
+}

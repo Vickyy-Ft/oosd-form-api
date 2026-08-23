@@ -1,0 +1,94 @@
+.privacy-notice {
+  width: 100%;
+}
+
+.privacy-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.privacy-point {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: background 0.2s;
+}
+
+.privacy-point:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.check-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--success);
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.internet-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+}
+
+.wifi-icon {
+  font-size: 1.2rem;
+}
+
+.internet-notice p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--warning);
+  margin: 0;
+}
+
+.privacy-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.privacy-actions button {
+  flex: 1;
+}
+
+.btn-accept {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-accept:hover {
+  background: var(--primary-hover);
+}
+
+.btn-decline {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+}
+
+.btn-decline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+}
