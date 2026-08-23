@@ -32,8 +32,9 @@ const LanguageSelector = () => {
             onClick={() => handleLanguageSelect('english')}
             aria-label="Select English language"
           >
-            <span className="lang-icon">🇬🇧</span>
+            <span className="lang-icon" style={{ fontFamily: 'var(--font-display)', opacity: 0.8 }}>Aa</span>
             <span className="lang-name">English</span>
+            <span className="lang-sub">English</span>
           </button>
 
           <button
@@ -41,7 +42,7 @@ const LanguageSelector = () => {
             onClick={() => handleLanguageSelect('tamil')}
             aria-label="Select Tamil language"
           >
-            <span className="lang-icon">🇮🇳</span>
+            <span className="lang-icon" style={{ opacity: 0.8 }}>அ</span>
             <span className="lang-name">தமிழ்</span>
             <span className="lang-sub">Tamil</span>
           </button>
@@ -51,7 +52,7 @@ const LanguageSelector = () => {
             onClick={() => handleLanguageSelect('hindi')}
             aria-label="Select Hindi language"
           >
-            <span className="lang-icon">🇮🇳</span>
+            <span className="lang-icon" style={{ opacity: 0.8 }}>अ</span>
             <span className="lang-name">हिंदी</span>
             <span className="lang-sub">Hindi</span>
           </button>
