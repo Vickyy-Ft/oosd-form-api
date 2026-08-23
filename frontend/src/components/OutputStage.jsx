@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useAppContext } from '../contexts/AppContext';
-import { generateOutput } from '../utils/api';
+import { generateOutput, API_BASE_URL } from '../utils/api';
 import './OutputStage.css';
 
 const CONTENT = {
@@ -82,7 +82,9 @@ const OutputStage = () => {
 
   const handleDownload = () => {
     if (downloadUrl) {
-      window.location.href = downloadUrl;
+      window.location.href = downloadUrl.startsWith('/api') 
+        ? downloadUrl.replace('/api', API_BASE_URL) 
+        : downloadUrl;
     }
   };
 
@@ -90,7 +92,9 @@ const OutputStage = () => {
     window.print();
   };
 
-  const fullDownloadUrl = downloadUrl ? `${window.location.origin}${downloadUrl}` : window.location.href;
+  const fullDownloadUrl = downloadUrl 
+    ? (downloadUrl.startsWith('/api') ? downloadUrl.replace('/api', API_BASE_URL) : downloadUrl)
+    : window.location.href;
 
   if (isGenerating) {
     return (
