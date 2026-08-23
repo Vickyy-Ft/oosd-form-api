@@ -1,14 +1,5 @@
-<div align="center">
-  <img src="https://img.icons8.com/color/120/000000/voice-recognition.png" alt="Logo">
-  <h1>Accessible Form Assistant 🎙️📝</h1>
-  <p><b>Empowering citizens to fill complex government forms independently using Voice and AI Vision.</b></p>
-  
-  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](#)
-  [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](#)
-  [![Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)](#)
-  [![Groq](https://img.shields.io/badge/Groq-F55036?style=for-the-badge&logo=groq&logoColor=white)](#)
-  [![Sarvam AI](https://img.shields.io/badge/Sarvam_AI-1E3A8A?style=for-the-badge)](#)
-</div>
+# Accessible Form Assistant 🎙️📝
+**Empowering citizens to fill complex government forms independently using Voice and AI Vision.**
 
 ---
 
